@@ -1,0 +1,108 @@
+#https://github.com/mattstratton/castanet/blob/main/REFERENCE.md
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+copyright_notice = "Copyright 2022, all rights reserved" #	Your copyright information for the footer of the page. Can contain Markdown.
+title = 'Cautiously Curious'
+description = "Forthcoming" #Description of your show. Can use Markdown.
+media_prefix = "" #required,like the same as baseURL if self hosting. The URL to pre-pend to your podcast files. Must end in a slash.	
+mainSections = "episode"
+site_theme = "blue"
+#episode_number_style = "" #The format used for episode numbers in the episode's RSS feed. The choices are either parens, dash or brackets. If not set, the episode title in the RSS feed will just default to the title of the episode, without any episode number included.
+site_layout = "row"
+enable_jumbo = "true"
+show_next_upcoming = "true" #	If there are episodes with the upcoming frontmatter set to true, then it will display the next episode on homepage. This halves the screen real estate of the latest episode section, which will then be displayed side by side.
+#custom_css = "" #Array of custom CSS files for over-riding theme settings or adding your own classes. These files should be put into your static directory (not the static directory of the theme).
+#about_logo	= "" #The logo (250px x 250px) you would like to appear on your About page. If not set, this will default to your Apple Podcasts image. This path should be relative to your main URL, for example, a file put in your static directory. This path should not start with a /.
+#favicon = "" #The favicon file you would like to use for your site. If not set, this will default to the file icons/favicon.ico. This file should be put into your static directory (not the static directory of the theme).
+
+
+[permalinks]
+	page = "/:filename/"
+	about = "/:filename/"
+	episode = "/:filename/"
+
+
+#Castanet supports menus with up to one submenu per menu item. The menu name must be "Main", and the menus are sorted based upon their identifier. At this time, you must have at least one menu item, or the theme will error out
+[[Menu.Main]]
+    name = "About"
+    identifier = "about"
+    url = "about"
+
+[[Menu.Main]]
+    name = "Contact"
+    identifier = "contact"
+    url = "contact"
+
+[[Menu.Main]]
+    name = "Hosts"
+    identifier = "hosts"
+    url = "host"
+
+[[Menu.Main]]
+    name = "Guests"
+    identifier = "guests"
+    url = "guest"
+
+[[Menu.Main]]
+    name = "Resources"
+    identifier = "resources"
+    url = "#!"
+
+[[Menu.Main]]
+    name = "Books"
+    identifier = "books"
+    url = "books"
+    parent = "resources"
+
+[[Menu.Main]]
+    name = "Podcasts"
+    identifier = "podcasts"
+    url = "books"
+    parent = "resources"
+
+
+[params.feed]
+copyright = "Copyright 2022, all rights reserved." #The copyright information for your feed. Do not use Markdown.	
+itunes_author = ""
+itunes_summary = "" #Limited to 4000 characters or less, plain text, no HTML.
+itunes_owner_name = "" #
+itunes_owner_email = "" #
+itunes_image = "" #Fully qualified path to your podcast's artwork for Apple Podcasts. Must conform to the Apple Podcasts image requirements, and be a JPG or PNG with a minimum of 1400 x 1400 pixels and a maximum of 3000 x 3000 pixesls	
+itunes_top_category	= "" #The main category for your podcast in Apple Podcasts	
+
+[params.social]
+github = "rastacalavera"
+gitlab = "rastacalavera"
+
+[params.authors]
+  [params.authors.rastacalavera]
+    name = "Rastacalavbera"
+    bio = "This is my bio" #The author/host bio. Supports Markdown.	 
+    thumbnail = "" #The image for the user. This can either be a fully qualifed URL, or relative to the baseURL.	
+    #Pronouns = ""
+
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+
+
+  [params.podlove]
+  subscribe_title = ""              # fallback: site title from above
+  subscribe_subtitle = ""           # fallback: ""
+  subscribe_description = ""        # fallback: ""
+  subscribe_cover = "img/logo.jpg"  # fallback: ""
+  subscribe_color = "#585e6c"       # fallback: ""
+  subscribe_size = "medium"         # options: small, medium, big
+  subscribe_format = "rectangle"    # options: rectangle, square, cover
+  subscribe_style = "filled"        # options: filled, outline, frameless
+  subscribe_language = "en"         # options: nl (dutch), en (english), eo (esperanto), de (german), fi (finnish), fr (french), ja (french)
+  subscribe_feed_type = "audio"     # options: audio, video
+  subscribe_feed_format = "mp3"     # options: mp3, aac, ogg, opus
+
+
+#Upcoming Episodes
+#If you would like to display upcoming episodes, you need to do a couple things. First, you will need to create a page where the upcoming episodes will be listed. You can check out exampleSite for an example, but basically, you want to create content/upcoming/_index.md.
+#Any episodes that have upcoming in their frontmatter set to true will be listed here, but not listed on any other pages (feed, home page, guest pages, etc). Additionally, episodes that are marked as "upcoming" will not display a YouTube video or audio player, even if those parameters are set.
+#Note: you will need to set buildFuture = true in your config.toml to allow Hugo to build upcoming episodes that are dated in the future.
