@@ -1,21 +1,17 @@
-#https://github.com/mattstratton/castanet/blob/main/REFERENCE.md
-baseURL = 'https://cautiouslycurious.com/'
-languageCode = 'en-us'
+baseurl = "https:cautiouslycurious/"
+languageCode = "en-us"
+title = "Cautiously Curious"
 theme = "castanet"
-copyright_notice = "Copyright 2022, all rights reserved" #	Your copyright information for the footer of the page. Can contain Markdown.
-title = 'Cautiously Curious'
-description = "Forthcoming" #Description of your show. Can use Markdown.
-media_prefix = "https://linuxlemming.com/mp3/" #required,like the same as baseURL if self hosting. The URL to pre-pend to your podcast files. Must end in a slash.	
-mainSections = "episode"
-site_theme = "gray" #this seems broken
-#episode_number_style = "" #The format used for episode numbers in the episode's RSS feed. The choices are either parens, dash or brackets. If not set, the episode title in the RSS feed will just default to the title of the episode, without any episode number included.
-site_layout = "row"
-enable_jumbo = "false"
-show_next_upcoming = "true" #	If there are episodes with the upcoming frontmatter set to true, then it will display the next episode on homepage. This halves the screen real estate of the latest episode section, which will then be displayed side by side.
-#custom_css = "" #Array of custom CSS files for over-riding theme settings or adding your own classes. These files should be put into your static directory (not the static directory of the theme).
-#about_logo	= "" #The logo (250px x 250px) you would like to appear on your About page. If not set, this will default to your Apple Podcasts image. This path should be relative to your main URL, for example, a file put in your static directory. This path should not start with a /.
-#favicon = "" #The favicon file you would like to use for your site. If not set, this will default to the file icons/favicon.ico. This file should be put into your static directory (not the static directory of the theme).
+themesdir = "../.."
+paginate = "3"
+buildFuture = true
+#favicon = "/img/ico.png" #has to be 16x16px
+#googleAnalytics = ""
 
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
 
 [permalinks]
 	page = "/:filename/"
@@ -23,92 +19,115 @@ show_next_upcoming = "true" #	If there are episodes with the upcoming frontmatte
 	episode = "/:filename/"
 
 
-#Castanet supports menus with up to one submenu per menu item. The menu name must be "Main", and the menus are sorted based upon their identifier. At this time, you must have at least one menu item, or the theme will error out
-[[Menu.Main]]
-    name = "About"
-    identifier = "1"
-    url = "about"
+# The theme supports menus with up to one submenu per menu item
+# The menu name must be "Main"
+# The menus are sorted based upon their identifier
 
 [[Menu.Main]]
-    name = "Upcoming"
-    identifier = "2"
-    url = "upcoming"
+    name = "Blog"
+    identifier = "A"
+    url = "/blog"
+
+[[Menu.Main]]
+    name = "Contact"
+    identifier = "contact"
+    url = "https://github.com/rastacalavera/cautiously-curious-HCN/issues/new/choose"
 
 #[[Menu.Main]]
 #    name = "Resources"
-#    identifier = "2"
+#    identifier = "resources"
 #    url = "#!"
-
-#    [[Menu.Main]]
-#        name = "Books"
-#        identifier = "3"
-#        url = "books"
-#        parent = "Resources"
-
-#    [[Menu.Main]]
-#        name = "Podcasts"
-#        identifier = "4"
-#        url = "books"
-#        parent = "Resources"
+#[[Menu.Main]]
+#    name = "Books"
+#    identifier = "book"
+#    url = "/books"
+#    parent = "resources"
+#[[Menu.Main]]
+#    name = "Podcasts"
+#    identifier = "podcast"
+#    url = "/podcast"
+#    parent = "resources"
 
 #[[Menu.Main]]
-#    name = "Contact"
-#    identifier = "contact"
-#    url = "contact"
+#    name = "About"
+#    identifier = "about"
+#    url = "/about"
 
 #[[Menu.Main]]
 #    name = "Hosts"
 #    identifier = "hosts"
-#    url = "host"
+#    url = "/host"
 
 #[[Menu.Main]]
 #    name = "Guests"
 #    identifier = "guests"
-#    url = "guest"
+#    url = "/guest"
 
-[params.feed]
-copyright = "Copyright 2022, all rights reserved." #The copyright information for your feed. Do not use Markdown.	
-itunes_author = "rastacalavera"
-itunes_summary = "A summary will be here soon." #Limited to 4000 characters or less, plain text, no HTML.
-itunes_owner_name = "rastacalavera" #
-itunes_owner_email = "rastacalavera@protonmail.me" #
-itunes_image = "" #Fully qualified path to your podcast's artwork for Apple Podcasts. Must conform to the Apple Podcasts image requirements, and be a JPG or PNG with a minimum of 1400 x 1400 pixels and a maximum of 3000 x 3000 pixesls	
-itunes_top_category	= "" #The main category for your podcast in Apple Podcasts	
+#[[Menu.Main]]
+#    name = "Upcoming Episodes"
+#    identifier = "upcoming"
+#    url = "/upcoming"
 
-[params.social]
-github = "rastacalavera"
-gitlab = "rastacalavera"
+[params]
+mainSections = ["episode"]
+episode_number_style  = "brackets"
+episode_number_prefix = "CWC"
+site_theme = "blue"
+site_layout = "row" #row/grid, if grid: jumbo is enabled and cannot be disabled, no sidebar
+show_next_upcoming = "true"
+enable_jumbo = "true" #true/false, if false, info in the jumbo gets placed in a left sidebar below episodes
+disable_title_caps = "true"
+copyright_notice = "Copyright 2022 Cautiously Curious"
+description = "## This is a description field" #markdown ok
+media_prefix = "https://cautiouslycurious.com/" #The URL to pre-pend to your podcast files. Must end in a slash.	
+#googleAnalytics_UA = ""
+# truncate = "100"
+# about_logo = "/img/logo1400x1400.png" #	The logo (250px x 250px) you would like to appear on your About page. If not set, this will default to your Apple Podcasts image. This path should be relative to your main URL, for example, a file put in your static directory. This path should not start with a /.
+#youtube_subscribe = "https://www.youtube.com/arresteddevops?sub_confirmation=1"
+#itunes_subscribe = "https://podcasts.apple.com/us/podcast/arrested-devops/id773888088?ign-mpt=uo%3D4&mt=2"
+#android_subscribe = "http://subscribeonandroid.com/feeds.podtrac.com/VGAulpN7MY1U"
+#spotify_subscribe = "https://open.spotify.com/show/..."
+#google_play_subscribe = "https://podcasts.google.com/feed/aHR0cHM6Ly93d3cuYXJyZXN0ZWRkZXZvcHMuY29tL2VwaXNvZGUvaW5kZXgueG1s"
+#stitcher_subscribe = "http://www.stitcher.com/podcast/arrested-devops-2/arrested-devops"
+#soundcloud_subscribe = "http://feeds.soundcloud.com/users/soundcloud:users:203144248/sounds.rss"
+#pocketcasts_subscribe = "http://pcasts.in/feed/feeds.soundcloud.com/users/soundcloud:users:203144248/sounds.rss"
+#mailchimp_subscribe = "//arresteddevops.us3.list-manage.com/subscribe/post?u=5e4cbcac996bb9df25f970a89&amp;id=154fa76bcc"
+# rss_subscribe = "http://feed.com/myfeed" #only set this if you don't want to use the built-in feed
+#disqusShortname = ""
 
-[params.authors]
-  [params.authors.rastacalavera]
-    name = "Rastacalavbera"
-    bio = "This is my bio" #The author/host bio. Supports Markdown.	 
-    thumbnail = "/img/CC1400.png" #The image for the user. This can either be a fully qualifed URL, or relative to the baseURL.	
-    #Pronouns = ""
+  [params.feed]
+    copyright = "Copyright 2022 Cautiously Curious" #do not use markdown in this field; it is used in the feed
+    #itunes_subtitle = "The best podcast ever" #no markdown or HTML
+    itunes_author = "Rastacalavera" #no markdown or HTML
+    itunes_summary = "Two dudes dip a toe." # Limited to 4000 characters or less, plain text, no HTML
+    itunes_owner_name = "rastacalavera"
+    itunes_owner_email = "rastacalavera@protonmail.me" #contains the e-mail address that will be used to contact the owner of the Podcast for communication specifically about their Podcast on Apple Podcasts. It will not be publicly displayed on Apple Podcasts.
+    itunes_image = "" #fqdn to the image art for your podcast
+    itunes_top_category = "Technology"
+    itunes_first_sub_category = "Education"
+    #itunes_second_sub_category = "Tech News"
+    language = "en-us"
 
+  [params.realfavicongenerator] # https://realfavicongenerator.net/
+    mask_icon_color="#5bbad5"
+    msapplication_tilecolor="#2b5797"
+    theme_color="#ffffff"
 
-[taxonomies]
-  category = "categories"
-  series = "series"
-  tag = "tags"
+  # Social links can be given in full URL form or short form
+  # In the short form the theme will generate a relevant URL
+  # Appear in the top right of the screen
+  [params.social]
+    github = "rastacalavera"
+    gitlab = "rastacalavera"
+    #twitter = "https://twitter.com/rastacalavera"
 
-
-  #[params.podlove]
-  #subscribe_title = ""              # fallback: site title from above
-  #subscribe_subtitle = ""           # fallback: ""
-  #subscribe_description = ""        # fallback: ""
-  #subscribe_cover = "img/logo.jpg"  # fallback: ""
-  #subscribe_color = "#585e6c"       # fallback: ""
-  #subscribe_size = "medium"         # options: small, medium, big
-  #subscribe_format = "rectangle"    # options: rectangle, square, cover
-  #subscribe_style = "filled"        # options: filled, outline, frameless
-  #subscribe_language = "en"         # options: nl (dutch), en (english), eo (esperanto), de (german), fi (finnish), fr (french), ja (french)
-  #subscribe_feed_type = "audio"     # options: audio, video
-  #subscribe_feed_format = "mp3"     # options: mp3, aac, ogg, opus
-
-
-#Upcoming Episodes
-#If you would like to display upcoming episodes, you need to do a couple things. First, you will need to create a page where the upcoming episodes will be listed. You can check out exampleSite for an example, but basically, you want to create content/upcoming/_index.md.
-#Any episodes that have upcoming in their frontmatter set to true will be listed here, but not listed on any other pages (feed, home page, guest pages, etc). Additionally, episodes that are marked as "upcoming" will not display a YouTube video or audio player, even if those parameters are set.
-#Note: you will need to set buildFuture = true in your config.toml to allow Hugo to build upcoming episodes that are dated in the future.
-buildFuture = true
+#this can show images of all the "hosts". I've pointed it to the main logo
+  [params.authors]
+    [params.authors.x]
+      name	= ""
+      thumbnail = "img/logo1400x1400.png"
+      bio = ""
+      [params.authors.x.social]
+        github = ""
+        gitlab = ""
+        twitter = ""
