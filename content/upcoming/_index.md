@@ -1,6 +1,5 @@
----
-title: "Upcoming"
-date: 2022-10-17T14:44:01-05:00
-draft: true
----
-
++++
+date = "2022-11-03T02:11:48-05:00"
+description = "Thing's We're Working On"
+title = "Skunk Works"
++++

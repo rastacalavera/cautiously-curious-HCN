@@ -32,9 +32,6 @@
               {{ with .Params.GitHub}}
                 {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-github-square fa-2x" "prefix" "https://github.com/") }}
               {{ end }}
-              {{ with .Params.GitLab}}
-              {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-gitlab-square fa-2x" "prefix" "https://gitlab.com/") }}
-            {{ end }}
               {{ with .Params.LinkedIn }}
                 {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-linkedin fa-2x" "prefix" "https://www.linkedin.com/in/") }}
               {{ end }}
