@@ -13,7 +13,7 @@ buildFuture = true
   tag = "tags"
 
 [permalinks]
-	# page = "/:filename/"
+	page = "/:filename/"
 	about = "/:filename/"
 	episode = "/:filename/"
 
@@ -107,7 +107,7 @@ media_prefix = "https://cautiouslycurious.com/" #required, The URL to pre-pend t
     itunes_author = "Rastacalavera" #required, no markdown or HTML
     itunes_summary = "Two friends stumble through various topics as they look to expand their horizons." #required, Limited to 4000 characters or less, plain text, no HTML
     itunes_owner_name = "Rastacalavera" #required, The name associated with the owner of the podcast on Apple Podcasts. Will not be displayed publicly on Apple Podcasts.
-    itunes_owner_email = "mrastacalavera@proton.me" #required, contains the e-mail address that will be used to contact the owner of the Podcast for communication specifically about their Podcast on Apple Podcasts. It will not be publicly displayed on Apple Podcasts.
+    itunes_owner_email = "rastacalavera@proton.me" #required, contains the e-mail address that will be used to contact the owner of the Podcast for communication specifically about their Podcast on Apple Podcasts. It will not be publicly displayed on Apple Podcasts.
     itunes_image = "https://www.arresteddevops.com/img/ado-podcast-logo.png" #required, Fully qualified path to your podcast's artwork for Apple Podcasts. Must conform to the Apple Podcasts image requirements, and be a JPG or PNG with a minimum of 1400 x 1400 pixels and a maximum of 3000 x 3000 pixesls, fqdn to the image art for your podcast
     itunes_top_category = "Education" #required
     itunes_first_sub_category = "Technology" #not required
