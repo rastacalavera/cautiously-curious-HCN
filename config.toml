@@ -30,7 +30,7 @@ buildFuture = true
 [[Menu.Main]]
     name = "Contact"
     identifier = "contact"
-    url = "/contact"
+    url = "https://github.com/rastacalavera/cautiously-curious-HCN/issues"
 
 [[Menu.Main]]
     name = "Hosts"
